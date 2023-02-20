@@ -10,9 +10,7 @@ const Question = ({ question, answer, handleAnswer, result }) => {
           return (
             <div
               key={index}
-              onClick={() => {
-                handleAnswer(option);
-              }}
+              onClick={() => handleAnswer(option)}
               className={`rounded-xl border-2 py-1 px-5 cursor-pointer 
              
               ${answer === option && !result && "bg-gray-300"}

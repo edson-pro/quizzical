@@ -38,10 +38,10 @@ export default function Questions() {
 
   const handleCheck = () => {
     const res = answers.map((e) => {
-      const q = questions.find((p) => p.id === e.id);
+      const question = questions.find((p) => p.id === e.id);
       return {
         id: e.id,
-        status: q.answer === e.answer ? "correct" : "incorrect",
+        status: question.answer === e.answer ? "correct" : "incorrect",
       };
     });
     setresults(res);
@@ -90,9 +90,7 @@ export default function Questions() {
           </div>
         ) : (
           <button
-            onClick={() => {
-              handleCheck();
-            }}
+            onClick={() => handleCheck()}
             className="bg-primary text-xl w-full lg:w-1/5 text-white px-8 pt-4 pb-5 rounded-2xl "
           >
             Check answers
